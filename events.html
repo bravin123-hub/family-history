@@ -11,6 +11,7 @@
       margin: 0;
       padding: 2rem;
       color: #333;
+      scroll-behavior: smooth;
     }
 
     h1 {
@@ -41,6 +42,22 @@
       position: relative;
       background-color: inherit;
       width: 50%;
+      opacity: 0;
+      transform: translateY(80px);
+      transition: all 1s ease;
+    }
+
+    .event.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
     }
 
     .event::after {
@@ -56,20 +73,17 @@
       z-index: 1;
     }
 
-    .left {
-      left: 0;
-    }
-
-    .right {
-      left: 50%;
-    }
-
     .content {
       padding: 1.5rem;
       background-color: white;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.6s ease;
+    }
+
+    .event.visible .content {
+      transform: scale(1.03);
     }
 
     .date {
@@ -89,6 +103,7 @@
     .sibling-card {
       width: 120px;
       text-align: center;
+      animation: fadeInUp 1.2s ease forwards;
     }
 
     .sibling-card img {
@@ -121,9 +136,7 @@
       background: #2c3e50;
       color: white;
       padding: 10px 25px;
-      border: none;
       border-radius: 25px;
-      cursor: pointer;
       text-decoration: none;
       transition: background 0.3s ease;
       margin: 2rem auto;
@@ -142,23 +155,15 @@
     }
 
     @media screen and (max-width: 600px) {
-      .timeline::after {
-        left: 31px;
-      }
+      .timeline::after { left: 31px; }
+      .event { width: 100%; padding-left: 70px; padding-right: 25px; }
+      .left::after, .right::after { left: 15px; }
+      .right { left: 0%; }
+    }
 
-      .event {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-      }
-
-      .left::after, .right::after {
-        left: 15px;
-      }
-
-      .right {
-        left: 0%;
-      }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -167,6 +172,7 @@
   <h1>📅 Bosslady Family Events</h1>
 
   <div class="timeline">
+
     <!-- Event 1 -->
     <div class="event left">
       <div class="content">
@@ -174,31 +180,11 @@
         <h3>🎓 Bravin’s Graduation</h3>
         <p>A proud moment for the Murwa family as <strong>Bravin</strong> completed his degree in Computer Science. A day of joy and inspiration.</p>
         <div class="siblings">
-          <div class="sibling-card">
-            <img src="images/harriet.jpg" alt="Harriet Camilla">
-            <div class="sibling-name">Harriet</div>
-            <div class="caption">Proud and joyful sister!</div>
-          </div>
-          <div class="sibling-card">
-            <img src="images/emily.jpg" alt="Emily Venrander">
-            <div class="sibling-name">Emily</div>
-            <div class="caption">Always supportive and cheerful.</div>
-          </div>
-          <div class="sibling-card">
-            <img src="images/bravin.jpg" alt="Bravin Murwa">
-            <div class="sibling-name">Bravin</div>
-            <div class="caption">Our tech genius and achiever!</div>
-          </div>
-          <div class="sibling-card">
-            <img src="images/cyprian.jpg" alt="Cyprian Murwa">
-            <div class="sibling-name">Cyprian</div>
-            <div class="caption">The calm strength of the family.</div>
-          </div>
-          <div class="sibling-card">
-            <img src="images/beled.jpg" alt="Beled Dilo">
-            <div class="sibling-name">Beled</div>
-            <div class="caption">The family’s smile maker.</div>
-          </div>
+          <div class="sibling-card"><img src="images/harriet.jpg"><div class="sibling-name">Harriet</div></div>
+          <div class="sibling-card"><img src="images/emily.jpg"><div class="sibling-name">Emily</div></div>
+          <div class="sibling-card"><img src="images/bravin.jpg"><div class="sibling-name">Bravin</div></div>
+          <div class="sibling-card"><img src="images/cyprian.jpg"><div class="sibling-name">Cyprian</div></div>
+          <div class="sibling-card"><img src="images/beled.jpg"><div class="sibling-name">Beled</div></div>
         </div>
       </div>
     </div>
@@ -234,6 +220,38 @@
         </div>
       </div>
     </div>
+
+    <!-- Event 4 -->
+    <div class="event right">
+      <div class="content">
+        <div class="date">December 2025</div>
+        <h3>🏖️ Journey to Mombasa</h3>
+        <p>An exciting coastal adventure — from Fort Jesus to white beaches, a refreshing family experience full of joy and discovery.</p>
+        <div class="siblings">
+          <div class="sibling-card"><img src="images/harriet.jpg"><div class="sibling-name">Harriet</div></div>
+          <div class="sibling-card"><img src="images/emily.jpg"><div class="sibling-name">Emily</div></div>
+          <div class="sibling-card"><img src="images/bravin.jpg"><div class="sibling-name">Bravin</div></div>
+          <div class="sibling-card"><img src="images/cyprian.jpg"><div class="sibling-name">Cyprian</div></div>
+          <div class="sibling-card"><img src="images/beled.jpg"><div class="sibling-name">Beled</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event 5 -->
+    <div class="event left">
+      <div class="content">
+        <div class="date">January 2026</div>
+        <h3>🤝 Emily’s Visitors at Home</h3>
+        <p>A warm afternoon hosting friends and relatives — laughter, stories, and a beautiful reminder of hospitality and love.</p>
+        <div class="siblings">
+          <div class="sibling-card"><img src="images/harriet.jpg"><div class="sibling-name">Harriet</div></div>
+          <div class="sibling-card"><img src="images/emily.jpg"><div class="sibling-name">Emily</div></div>
+          <div class="sibling-card"><img src="images/bravin.jpg"><div class="sibling-name">Bravin</div></div>
+          <div class="sibling-card"><img src="images/cyprian.jpg"><div class="sibling-name">Cyprian</div></div>
+          <div class="sibling-card"><img src="images/beled.jpg"><div class="sibling-name">Beled</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div style="text-align:center;">
@@ -243,5 +261,21 @@
   <footer>
     &copy; 2025 The Bosslady Family — Created by Bravin Murwa
   </footer>
+
+  <script>
+    // Animate events on scroll
+    const events = document.querySelectorAll('.event');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible'); // hides again when scrolling up
+        }
+      });
+    }, { threshold: 0.3 });
+
+    events.forEach(event => observer.observe(event));
+  </script>
 </body>
 </html>
