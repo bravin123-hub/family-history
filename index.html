@@ -15,15 +15,55 @@
       line-height: 1.6;
     }
 
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      background: url('images/hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      padding: 20px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+
+    /* ===== HEADER ===== */
     header {
       background: linear-gradient(135deg, #2c3e50, #34495e);
       color: white;
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 2rem 1rem;
     }
 
-    header h1 {
-      font-size: 2.5rem;
+    header h2 {
+      font-size: 2rem;
       margin-bottom: 0.5rem;
     }
 
@@ -117,9 +157,17 @@
 </head>
 
 <body>
-  <!-- 🌟 HEADER -->
+  <!-- 🌄 HERO SECTION -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>The Murwa Family Story</h1>
+      <p>Strong roots, bright hearts — united by love and history</p>
+    </div>
+  </div>
+
+  <!-- 🏠 HEADER -->
   <header>
-    <h1>The Murwa Family Story</h1>
+    <h2>Welcome to Our Family Page</h2>
     <p>Celebrating our roots, love, and unity through generations</p>
   </header>
 
@@ -137,7 +185,7 @@
 
   <!-- 💬 FOOTER -->
   <footer>
-    <p>© 2025 The Murwa Family | Built with ❤️ using HTML, CSS & JS</p>
+    <p>© 2025 The Murwa Family | Built with ❤️ by Bravin Murwa</p>
   </footer>
 
   <script>
