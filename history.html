@@ -3,63 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Murwa Family History - Details</title>
+  <title>The Murwa Family History</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fafafa;
+      background-color: #f9fafb;
       color: #333;
       line-height: 1.6;
       padding: 2rem;
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
       color: #2c3e50;
     }
 
+    .content {
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
     p {
-      max-width: 800px;
-      margin: 1rem auto;
+      margin: 1rem 0;
+      font-size: 1.1rem;
+    }
+
+    .family-photo {
+      display: block;
+      margin: 2rem auto;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .family-photo:hover {
+      transform: scale(1.08);
     }
 
     .btn {
-      display: block;
-      margin: 2rem auto;
+      display: inline-block;
+      margin-top: 2rem;
       background: #2c3e50;
       color: white;
       padding: 10px 25px;
       border: none;
       border-radius: 25px;
       cursor: pointer;
+      text-decoration: none;
       transition: background 0.3s ease;
     }
 
     .btn:hover {
       background: #16a085;
     }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
   </style>
 </head>
 
 <body>
   <h1>The Murwa Family Heritage</h1>
-  <p>
-    The Murwa family traces its origins to Western Kenya, where our ancestors
-    built a home based on faith, integrity, and unity. Over the years, our family
-    has spread across regions but continues to share the same love and respect.
-  </p>
 
-  <p>
-    Each generation has contributed unique talents and achievements — from teachers
-    to farmers, leaders to innovators — all carrying forward the Murwa name with pride.
-  </p>
+  <div class="content">
+    <img src="images/family.jpg" alt="Murwa Family Photo" class="family-photo">
 
-  <p>
-    Our elders always remind us that family is not just blood — it is a bond
-    of shared values and mutual support. This website keeps their memory alive.
-  </p>
+    <p>
+      The <strong>Murwa family</strong> proudly originates from <strong>Eldoret Sub County, Turbo, Ngenyilel Ward, Kapkechui area</strong>.
+      Our story is one of resilience, faith, and unity — led by our beloved mother
+      <strong>Aggary Anjiko</strong>, a strong widow who raised her family with grace and love.
+    </p>
 
-  <button class="btn" onclick="window.location.href='index.html'">← Back to Home</button>
+    <p>
+      We are a family of five siblings — <strong>Harriet Camilla</strong>, <strong>Emily Venrander</strong>,
+      <strong>Cyprian Murwa</strong>, and <strong>Beled Dilo</strong> — bound by shared memories, laughter,
+      and the dream of continuing our family’s legacy.
+    </p>
+
+    <p>
+      Through challenges and blessings, we stand together. The Murwa family believes
+      that unity is strength, and our story will live on through generations — built
+      on love, hard work, and the wisdom of those who came before us.
+    </p>
+
+    <a href="index.html" class="btn">← Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 The Murwa Family — Created by Bravin Murwa
+  </footer>
 </body>
 </html>
+
