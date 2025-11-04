@@ -21,7 +21,7 @@
 
     .timeline {
       position: relative;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
@@ -64,39 +64,56 @@
       left: 50%;
     }
 
-    .left::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 22px;
-      right: 30px;
-      border: medium solid transparent;
-      border-width: 10px;
-      border-left-color: #fff;
-    }
-
-    .right::before {
-      content: " ";
-      height: 0;
-      position: absolute;
-      top: 22px;
-      left: 30px;
-      border: medium solid transparent;
-      border-width: 10px;
-      border-right-color: #fff;
-    }
-
     .content {
       padding: 1.5rem;
       background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     .date {
       font-weight: bold;
       color: #16a085;
       margin-bottom: 0.5rem;
+    }
+
+    .siblings {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 1.5rem;
+    }
+
+    .sibling-card {
+      width: 120px;
+      text-align: center;
+    }
+
+    .sibling-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .sibling-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .sibling-name {
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+      font-size: 0.9rem;
+    }
+
+    .caption {
+      font-size: 0.85rem;
+      color: #555;
     }
 
     .btn {
@@ -135,13 +152,6 @@
         padding-right: 25px;
       }
 
-      .event::before {
-        left: 60px;
-        border: medium solid transparent;
-        border-width: 10px;
-        border-right-color: white;
-      }
-
       .left::after, .right::after {
         left: 15px;
       }
@@ -157,27 +167,71 @@
   <h1>📅 Bosslady Family Events</h1>
 
   <div class="timeline">
+    <!-- Event 1 -->
     <div class="event left">
       <div class="content">
         <div class="date">March 2024</div>
-        <h3>Bravin’s Graduation 🎓</h3>
-        <p>A proud moment for the Murwa family as Bravin completed his degree in Computer Science. A celebration filled with love and inspiration.</p>
+        <h3>🎓 Bravin’s Graduation</h3>
+        <p>A proud moment for the Murwa family as <strong>Bravin</strong> completed his degree in Computer Science. A day of joy and inspiration.</p>
+        <div class="siblings">
+          <div class="sibling-card">
+            <img src="images/harriet.jpg" alt="Harriet Camilla">
+            <div class="sibling-name">Harriet</div>
+            <div class="caption">Proud and joyful sister!</div>
+          </div>
+          <div class="sibling-card">
+            <img src="images/emily.jpg" alt="Emily Venrander">
+            <div class="sibling-name">Emily</div>
+            <div class="caption">Always supportive and cheerful.</div>
+          </div>
+          <div class="sibling-card">
+            <img src="images/bravin.jpg" alt="Bravin Murwa">
+            <div class="sibling-name">Bravin</div>
+            <div class="caption">Our tech genius and achiever!</div>
+          </div>
+          <div class="sibling-card">
+            <img src="images/cyprian.jpg" alt="Cyprian Murwa">
+            <div class="sibling-name">Cyprian</div>
+            <div class="caption">The calm strength of the family.</div>
+          </div>
+          <div class="sibling-card">
+            <img src="images/beled.jpg" alt="Beled Dilo">
+            <div class="sibling-name">Beled</div>
+            <div class="caption">The family’s smile maker.</div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!-- Event 2 -->
     <div class="event right">
       <div class="content">
         <div class="date">August 2024</div>
-        <h3>Family Reunion 🏡</h3>
-        <p>Gathering at Kapkechui with laughter, shared meals, and heartwarming memories. A day to remember our roots and unity.</p>
+        <h3>🏡 Family Reunion</h3>
+        <p>Gathering at Kapkechui with laughter, shared meals, and timeless memories — reminding us that family is everything.</p>
+        <div class="siblings">
+          <div class="sibling-card"><img src="images/harriet.jpg"><div class="sibling-name">Harriet</div></div>
+          <div class="sibling-card"><img src="images/emily.jpg"><div class="sibling-name">Emily</div></div>
+          <div class="sibling-card"><img src="images/bravin.jpg"><div class="sibling-name">Bravin</div></div>
+          <div class="sibling-card"><img src="images/cyprian.jpg"><div class="sibling-name">Cyprian</div></div>
+          <div class="sibling-card"><img src="images/beled.jpg"><div class="sibling-name">Beled</div></div>
+        </div>
       </div>
     </div>
 
+    <!-- Event 3 -->
     <div class="event left">
       <div class="content">
         <div class="date">October 2025</div>
-        <h3>Mom’s Birthday 🎂</h3>
-        <p>Celebrating Aggary Anjiko’s strength and love — the pillar of the Bosslady family. A day filled with joy and gratitude.</p>
+        <h3>🎂 Mom’s Birthday</h3>
+        <p>Celebrating <strong>Aggary Anjiko</strong> — the heart of our home and the strength of the Bosslady family. With love from all five children.</p>
+        <div class="siblings">
+          <div class="sibling-card"><img src="images/harriet.jpg"><div class="sibling-name">Harriet</div></div>
+          <div class="sibling-card"><img src="images/emily.jpg"><div class="sibling-name">Emily</div></div>
+          <div class="sibling-card"><img src="images/bravin.jpg"><div class="sibling-name">Bravin</div></div>
+          <div class="sibling-card"><img src="images/cyprian.jpg"><div class="sibling-name">Cyprian</div></div>
+          <div class="sibling-card"><img src="images/beled.jpg"><div class="sibling-name">Beled</div></div>
+        </div>
       </div>
     </div>
   </div>
